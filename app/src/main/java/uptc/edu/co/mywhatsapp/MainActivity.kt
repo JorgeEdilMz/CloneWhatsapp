@@ -29,23 +29,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun configBottomBar() {
-        fillOptionsChatList()
-        addOptionsChatsToList()
-    }
-
-    private fun addOptionsChatsToList() {
-        optionsChatList.forEach { optionChat ->
-            val optionsChatView = layoutInflater.inflate(R.layout.bar_bottom_chat, null)
-            val tvNameOptionChat: TextView = optionsChatView.findViewById(R.id.tvNameOption)
-            tvNameOptionChat.text = optionChat.nameOption
-            llBottomBarChat.addView(optionsChatView)
-        }
-    }
-
-    private fun fillOptionsChatList() {
-        for(i in 0 until 4){
-            optionsChatList.add(OptionChat("Option $i"))
-        }
+        val optionsChatView = layoutInflater.inflate(R.layout.bar_bottom_chat, null)
+        llBottomBarChat.addView(optionsChatView)
     }
 
     private fun configChats() {
